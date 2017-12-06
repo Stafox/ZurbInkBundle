@@ -9,7 +9,7 @@ parameters:
 
 services:
     zurb_ink.csstoinlinestyles:
-        class: "zurb_ink.csstoinlinestyles.class"
+        class: "%zurb_ink.csstoinlinestyles.class%"
 
     zurb_ink.inlinecss:
         class: "%zurb_ink.inlinecss.class%"
