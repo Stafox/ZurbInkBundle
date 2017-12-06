@@ -19,7 +19,7 @@ You can install this bundle using composer
 
 or add the package to your `composer.json` file directly.
 
-Php 7.0 is now required. Make sure your composer.json, does not set the platform to php ``< 7.0`:
+Php 7.0 is now required. Make sure your composer.json, does not set the platform to php `< 7.0`:
 
     "config": {
        "bin-dir": "bin",
