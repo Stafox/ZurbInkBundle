@@ -6,7 +6,7 @@
  * Time: 18:05
  */
 
-namespace Hampe\Bundle\ZurbInkBundle\Twig;
+namespace Stafox\ZurbInkBundle\Twig;
 
 use \Twig_Token;
 use \Twig_TokenParser;

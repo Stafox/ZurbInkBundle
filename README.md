@@ -1,10 +1,12 @@
+**WARNING**: this is only a Extended-Fork of "https://github.com/thampe/ZurbInkBundle"
+
 # ZurbInkBundle (Foundation for Emails 2)
 Creating email templates is hard.
 This Symfony Bundle provides some help:
 
 * [Foundation for Emails 2](https://github.com/zurb/foundation-emails) Integration for awesome and responsive emails. Checkout  their [documentation](http://foundation.zurb.com/emails.html).
 * Use normal CSS files for styling, add them via `{{ zurb_ink_styles.add("@YourBundle/Resources/public/css/styles.css") }}`.
-* Automatic inline styles via the `{% ìnlinestyle %}` tag (powered by [Tijs Verkoyen's CssToInlineStyles](https://github.com/tijsverkoyen/CssToInlineStyles)).
+* Automatic inline styles via the `{% ìnlinestyle %}` tag (powered by [Tijs Verkoyen's CssToInlineStyles Fork by voku](https://github.com/voku/CssToInlineStyles)).
 * Imports your CSS rules also in html head via `{{ includeStyles(zurb_ink_styles) }}`
 * **New in 2.0:** [Inky](https://github.com/zurb/inky)-Template Support via the `{% inky %}` tag (powered by [https://github.com/thampe/inky](https://github.com/thampe/inky)) 
 
@@ -13,15 +15,16 @@ This Symfony Bundle provides some help:
 
 You can install this bundle using composer
 
-    composer require hampe/zurb-ink-bundle
+    composer require stafox/zurb-ink-bundle
+
 or add the package to your `composer.json` file directly.
 
-Php 5.4 is now required. Make sure your composer.json, does not set the platform to php 5.3.*:
+Php 7.0 is now required. Make sure your composer.json, does not set the platform to php ``< 7.0`:
 
     "config": {
        "bin-dir": "bin",
        "platform": {
-           "php": "5.4.0" 
+           "php": "7.0"
        }
     },
 
@@ -32,16 +35,16 @@ After you have installed the package, you just need to add the bundle to your Ap
     // in AppKernel::registerBundles()
     $bundles = array(
         // ...
-        new Hampe\Bundle\ZurbInkBundle\HampeZurbInkBundle(),
+        new Stafox\ZurbInkBundle\StafoxZurbInkBundle(),
         // ...
     );
 
 ## Usage
 
 ### Option A: Extend the base.html.twig
-If you want to use the zurb ink framework, extend the `HampeZurbInkBundle::base.html.twig`.
+If you want to use the zurb ink framework, extend the `StafoxZurbInkBundle::base.html.twig`.
 
-    {% extends 'HampeZurbInkBundle:FoundationForEmails:2/base.html.twig' %}
+    {% extends 'StafoxZurbInkBundle:FoundationForEmails:2/base.html.twig' %}
     {% block preHtml %}
             {# add your css files here, please use a bundle relative path #}
             {{ zurb_ink_styles.add("@YourBundle/Resources/public/css/style1.css") }}
@@ -51,11 +54,13 @@ If you want to use the zurb ink framework, extend the `HampeZurbInkBundle::base.
     {% block content %}
         {# html #}
     {% endblock %}
-    {% extends 'HampeZurbInkBundle::base.html.twig' %}
+    {% extends 'StafoxZurbInkBundle::base.html.twig' %}
 
 ---  
 
-*Note:* If you prefer not to have the CSS-Styles also in the `<head>` of your HTML-Document, you can override the `headStyles`-Block: `{% block headStyles %}{% endblock %}`. Be aware that some CSS-Rules can't be realized with inline-styles, like `:hover`-States or `@media`-Queries (both uesed by ZURB Ink Framework)!
+*Note:* If you prefer not to have the CSS-Styles also in the `<head>` of your HTML-Document, you can override the 
+`headStyles`-Block: `{% block headStyles %}{% endblock %}`. Be aware that some CSS-Rules can't be realized with 
+inline-styles, like `:hover`-States or `@media`-Queries (both uesed by ZURB Ink Framework)!
 
 ### Option B: Write your own template from scratch
 

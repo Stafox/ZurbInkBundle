@@ -6,9 +6,9 @@
  * Time: 17:59
  */
 
-namespace Hampe\Bundle\ZurbInkBundle\Twig;
+namespace Stafox\ZurbInkBundle\Twig;
 
-use Hampe\Bundle\ZurbInkBundle\Service\CssContainer;
+use Stafox\ZurbInkBundle\Service\CssContainer;
 use \Twig_Extension;
 use \Twig_Extension_GlobalsInterface;
 use \Twig_SimpleFunction;

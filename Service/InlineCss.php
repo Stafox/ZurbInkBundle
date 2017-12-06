@@ -1,28 +1,25 @@
 <?php
-/**
- *  InlineCss.php
- *
- *
- *  @license    see LICENSE File
- *  @filename   InlineCss.php
- *  @package    zurb-ink-bundle-symfony
- *  @author     Thomas Hampe <thomas@hampe.co>
- *  @copyright  2013-2014 Thomas Hampe
- *  @date       09.08.14
- */ 
 
-namespace Hampe\Bundle\ZurbInkBundle\Service;
+namespace Stafox\ZurbInkBundle\Service;
 
-
-use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
+use voku\CssToInlineStyles\CssToInlineStyles;
 
 class InlineCss
 {
-
     /**
      * @var CssToInlineStyles
      */
     protected $cssToInlineStyles;
+
+    /**
+     * InlineCss constructor.
+     * @param CssToInlineStyles $cssToInlineStyles
+     */
+    public function __construct($cssToInlineStyles)
+    {
+        $this->cssToInlineStyles = $cssToInlineStyles;
+    }
+
 
     public function setCss($css)
     {
@@ -49,10 +46,6 @@ class InlineCss
      */
     protected function getCssToInlineStyles()
     {
-        if(!$this->cssToInlineStyles) {
-            $this->cssToInlineStyles = new CssToInlineStyles();
-        }
-
         return $this->cssToInlineStyles;
     }
 

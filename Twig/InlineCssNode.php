@@ -6,7 +6,7 @@
  * Time: 18:24
  */
 
-namespace Hampe\Bundle\ZurbInkBundle\Twig;
+namespace Stafox\ZurbInkBundle\Twig;
 
 use \Twig_Node;
 use \Twig_Compiler;

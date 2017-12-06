@@ -12,7 +12,7 @@
  */ 
 
 
-namespace Hampe\Bundle\ZurbInkBundle\Twig;
+namespace Stafox\ZurbInkBundle\Twig;
 
 
 use Hampe\Inky\Inky;

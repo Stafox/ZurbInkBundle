@@ -1,6 +1,6 @@
-{% extends 'HampeZurbInkBundle::base.html.twig' %}
+{% extends 'StafoxZurbInkBundle::base.html.twig' %}
 {% block preHtml %}
-    {{ zurb_ink_styles.add("@HampeZurbInkBundle/Resources/public/css/hero.css") }}
+    {{ zurb_ink_styles.add("@StafoxZurbInkBundle/Resources/public/css/hero.css") }}
 {% endblock %}
 {% block body %}
 <table class="body">
@@ -8,7 +8,7 @@
 <td class="center" align="center" valign="top">
 <center>
 {% block header %}
-    {% embed 'HampeZurbInkBundle:Partials:header.html.twig' %}
+    {% embed 'StafoxZurbInkBundle:Partials:header.html.twig' %}
         {% block headerColRight %}
             <span class="template-label">Hero</span>
         {% endblock %}
@@ -116,12 +116,12 @@
             {% endblock %}
 
             {% block socialBlock %}
-                {% embed 'HampeZurbInkBundle:Partials:socialPanel.html.twig' %}
+                {% embed 'StafoxZurbInkBundle:Partials:socialPanel.html.twig' %}
 
                 {% endembed %}
             {% endblock %}
             {% block footer %}
-                {% embed 'HampeZurbInkBundle:Partials:footer.html.twig' %}
+                {% embed 'StafoxZurbInkBundle:Partials:footer.html.twig' %}
                     {% block footerLinks %}
                     <a href="#1">Link1</a> | <a href="#2">Link2</a> | <a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>
                     {%  endblock %}

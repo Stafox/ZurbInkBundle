@@ -11,7 +11,7 @@
  *  @date       16.04.16
  */ 
 
-namespace Hampe\Bundle\ZurbInkBundle\Twig;
+namespace Stafox\ZurbInkBundle\Twig;
 
 use Twig_Node;
 
@@ -29,7 +29,7 @@ class InkyNode extends Twig_Node
      */
     public function compile(\Twig_Compiler $compiler)
     {
-        $extensionName = (version_compare(\Twig_Environment::VERSION, '1.26.0') >= 0) ? 'Hampe\Bundle\ZurbInkBundle\Twig\InkyExtension' : InkyExtension::NAME;
+        $extensionName = (version_compare(\Twig_Environment::VERSION, '1.26.0') >= 0) ? 'Stafox\ZurbInkBundle\Twig\InkyExtension' : InkyExtension::NAME;
 
         $compiler
             ->addDebugInfo($this)

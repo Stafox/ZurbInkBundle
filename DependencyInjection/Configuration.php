@@ -1,6 +1,6 @@
 <?php
 
-namespace Hampe\Bundle\ZurbInkBundle\DependencyInjection;
+namespace Stafox\ZurbInkBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('hampe_zurb_ink');
+        $rootNode = $treeBuilder->root('stafox_zurb_ink');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
