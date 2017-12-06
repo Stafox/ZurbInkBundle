@@ -11,6 +11,8 @@ class InlineCss
      */
     protected $cssToInlineStyles;
 
+    protected $copiedInliner;
+
     /**
      * InlineCss constructor.
      * @param CssToInlineStyles $cssToInlineStyles
@@ -35,7 +37,7 @@ class InlineCss
     {
         $html = $this->getCssToInlineStyles()->convert();
         // reset the whole InlineStyles Object (it does not reset the parsed css-rules after ::convert())
-        $this->cssToInlineStyles = null;
+        $this->copiedInliner = null;
 
         return $html;
     }
@@ -46,7 +48,11 @@ class InlineCss
      */
     protected function getCssToInlineStyles()
     {
-        return $this->cssToInlineStyles;
+        if ($this->copiedInliner === null) {
+            $this->copiedInliner = clone $this->cssToInlineStyles;
+        }
+
+        return $this->copiedInliner;
     }
 
 
